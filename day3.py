@@ -61,7 +61,7 @@ class SecondSolution:
         left = 0
         right = len(num) - 1
         while left <= right:
-            if rotatedNum[num[left]] != num[right]:
+            if num[left] not in rotatedNum or rotatedNum[num[left]] != num[right]:
                 return False
             left += 1
             right -= 1
