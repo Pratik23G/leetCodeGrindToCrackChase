@@ -50,4 +50,25 @@ confirmPalindrome = Solution()
 print(confirmPalindrome.isPlaindromeCheck(exLinkedList))
 print(confirmPalindrome.isPlaindromeCheck(ex2LinkedList))
 
+class SecondSolution:
+    def isStrobogrammatic(self, num: str) -> bool:
+        rotatedNum = {
+            '0' : '0',
+            '1' : '1',
+            '6' : '9',
+            '8' : '8',
+            '9' : '6'}
+        left = 0
+        right = len(num) - 1
+        while left <= right:
+            if rotatedNum[num[left]] != num[right]:
+                return False
+            left += 1
+            right -= 1
+        return True
+
+test1 = "69"
+
+verifyStrobogrammatic = SecondSolution()
+print(verifyStrobogrammatic.isStrobogrammatic(test1))
         
